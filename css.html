@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            color:red;
+            background: #000;
+            width:200px;
+            height:100px;
+        }
+        .cc{
+            background: rgb(255,0,255);
+            /*background:#ff0000*/
+            /*注意权重值*/
+            width:100px;
+            height:50px;
+        }
+        #hh{
+            background: #0000ffff;
+        }
+        #dd h1{
+            /*后代选择器*/
+            background: green;
+        }
+        #div1:hover{
+            background: #ff0000;
+        }
+        #link1:hover{
+            background: #00ff00;
+        }
+
+    </style>
+</head>
+<body>
+<h1>smilesmile</h1>
+<p class="cc">giggle</p>
+<div id="dd">
+
+<h1 id="hh" class="cc" style="background: #0000ff;">hahaha</h1>
+</div>
+<div id="div1">
+    div1
+</div>
+<a href="" id="link1">link</a>
+</body>
+</html>
