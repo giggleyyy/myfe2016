@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数</title>
+</head>
+<body>
+<script>
+   /* function aa(str){//形参
+        alert(str);
+    }*/
+   /* aa('smile');//实参
+    aa('haha');*/
+    function sayHi(name,age,sex){
+        console.log(name+'的年龄是:'+age+',性别是:'+sex);
+        console.log(arguments[0]);
+        console.log(arguments[3]);
+
+    }
+    sayHi('smile',18,'male','haha');
+
+   /*
+   function aa(){//函数声明
+   console.log(‘haha);
+   */
+   var aa=function(){//函数表达式
+       console.log('smile');
+   };
+aa();
+</script>
+</body>
+</html>
