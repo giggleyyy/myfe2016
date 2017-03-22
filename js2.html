@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js2</title>
+</head>
+<body>
+<script>
+    var a=5;
+    var b='abc';
+    var c=true;
+    var d=6;
+    console.log(a+b);
+    console.log(b+c);
+    console.log(a+c);//此时会把c当成1来算
+    console.log(a-b);//NaN(not a number)
+    console.log(a>b);
+    console.log(a==d);//一个等号为赋值，三个等号既比较值，也比较类型（全等或恒等）
+    console.log(a>d&&a==d);
+    console.log(a>d||a==d);
+   /*if(a>d){
+
+    }else if(){
+
+    }else{
+
+    }*/
+   switch(a){
+       case 5:
+       alert('a=5');
+       break;//不加break则会继续往下执行
+       case 6:
+           alert('a=6');
+           break;
+       default:
+           alert('a=other');
+   }
+</script>
+</body>
+</html>
