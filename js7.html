@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数式编程</title>
+</head>
+<body>
+<script>
+function aa(b){
+    b(function(d){
+        alert(d);
+    })
+}
+aa(function (c) {
+    c('smile');
+});
+</script>
+</body>
+</html>
