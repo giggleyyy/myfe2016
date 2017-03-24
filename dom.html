@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象</title>
+</head>
+<body>
+<buttom id="btn">点击</buttom>
+<div id="div1">div1</div>
+<ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+</ul>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        //先找到div1再控制它，要操作谁就先找到谁再控制
+        var div1=document.getElementById('div1');
+       div1.style.background='red';
+       div1.style.width='200px';
+    };
+    var li = document.getElementsByTagName('li');
+    for(var i =0;i<li.length;i++){
+        li[i].onclick = function(){
+            //this指向当前对象(正在操作的对象)
+           alert(this.innerHTML);
+        };
+    }
+</script>
+</body>
+</html>
