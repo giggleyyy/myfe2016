@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--和style里的定义有关，和html里的定义无关-->
+    <style>
+        .bb{
+            background: #00ff00;
+        }
+        .aa{
+            background: #0000ff;
+        }
+        div.aa.bb{
+            /*有空格就是它的后代，没有空格则为两者兼具*/
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="aa bb">div1</div>
+</body>
+</html>
