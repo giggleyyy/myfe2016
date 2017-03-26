@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style:none;
+        }
+        #container{
+            width:400px;
+            height:200px;
+         /*   background: lightgrey;*/
+            margin:50px auto;
+        }
+        #menu{
+
+            height:30px;
+        }
+        #menu li{
+            width:100px;
+            height:30px;
+            float:left;
+            margin-right:10px;
+            background: lightgray;
+            text-align:center;
+            line-height:30px;
+
+        }
+        #content{
+           /* clear:both;*/
+            background: lightgrey;
+            height:170px;
+            border-top:1px solid black;
+        }
+        #menu .selected{
+            background: #000000;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+<ul id="menu">
+    <li class="selected">javaScript</li>
+    <li>css</li>
+    <li>html</li>
+</ul>
+<div id="content">
+    11111
+</div>
+</div>
+<script>
+    var arr = [11111,22222,33333];
+   // var oContainer = document.getElementById('container');
+    var oMenu = document.getElementById('menu');
+    var aLi = oMenu.children;//oMenu.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var last = 0;
+    //oContent.innerHTML = arr[0];
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+         /*   for(var j=0; j<aLi.length; j++){
+                aLi[j].className = '';
+                }*/
+           aLi[last].className = "";
+           this.className = 'selected';
+           last = this.index;
+           oContent.innerHTML = arr[this.index];
+         /*   this.className = 'selected';
+            oContent.innerHTML = data[this.index];*/
+        }
+    }
+</script>
+</body>
+</html>
