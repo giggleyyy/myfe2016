@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style>
+        #a{
+            width:300px;
+            height:200px;
+            background: red;
+        }
+        #b{
+            width:200px;
+            height:100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<!--当给父元素和子元素注册单击事件时，可能会出现事件的向上传播-->
+<div id = "a">
+    a
+    <div id = "b">
+        b
+</div>
+</div>
+<script>
+    var oA = document.getElementById('a');
+    var oB = document.getElementById('b');
+    oA.onclick = function(){
+        alert('a');
+    };
+    oB.onclick = function(){
+        alert('b');
+    };
+</script>
+
+</body>
+</html>
