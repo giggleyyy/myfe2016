@@ -27,7 +27,7 @@
         .sub-menu{
 
             border:1px solid black;
-            display:none;
+            display:none;/*外部样式  用 .style.display获取不到*/
         }
     </style>
 </head>
@@ -60,19 +60,21 @@
         //var bShow = false;//一个标识位，用来标识sub-menu是否显示，
         // true代表显示，false代表隐藏
 
-       aH3[i].bShow = false;
+            aH3[i].bShow = false; //给每一个都设置
             aH3[i].onclick = function(){
 
                /* console.log( this.nextSibling );
-                console.log( this.nextElementSibling );*/
+                console.log( this.nextElementSibling );找下一个元素兄弟有兼容性问题*/
 
-                var oSubMenu = next(this);
-                if(oSubMenu){
-                 /* if(oSubMenu.style.display == 'block'){
+                var oSubMenu = next(this);//
+                if(oSubMenu){   //即oSubmenu != null  先判断是否有效（h3下的ul可能为空），才能进行以下注释的代码
+                  //  alert(oSubMenu.style.display == '');  查看oSubmenu的样式
+                 /* if(oSubMenu.style.display == 'block'){ //获取的是内联样式
                       oSubMenu.style.display = 'none';
                   }else{
                       oSubMenu.style.display = 'block';
                   }*/
+
                   if(this.bShow){
                       oSubMenu.style.display = 'none';
                   }else{
@@ -83,11 +85,11 @@
             };
     }
 
-    function next(elem){//函数
+    function next(elem){//函数(解决兼容性问题)找elem的下一个兄弟节点
         do{
             elem = elem.nextSibling;
-        }while(elem && elem.nodeType !=1);
-        return elem;
+        }while(elem && elem.nodeType !=1); // ！=1 表明没找到
+        return elem;     //找到了则返回元素，找不到则返回空
     }
 
 </script>
