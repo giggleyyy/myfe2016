@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #div{
+            width: 200px;
+            height:200px;
+            background: #ff0000;
+            position:absolute;
+            left:0;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+hahahahahahahahahahahahahahahahaha
+   <div id="div"></div>
+   <script>
+       var oDiv = document.getElementById("div");
+       var iDivX = iDivY = 0;
+       oDiv.onmousedown = function (e) {
+           e = e || window.event; //能力检测
+           iDivX = e.clientX - oDiv.offsetLeft;
+           iDivY = e.clientY - oDiv.offsetTop;
+
+           document.onmousemove = function (e) {
+               e = e || window.event;
+               var iLeft = e.clientX - iDivX;
+               var iTop = e.clientY - iDivY;
+               oDiv.style.left = iLeft + 'px';
+               oDiv.style.top = iTop + 'px';
+            if(iLeft <=20){
+                oDiv.style.left = 0;
+            }
+
+               if(iLeft > document.documentElement.clientWidth - oDiv.offsetWidth){
+                   oDiv.style.left = document.documentElement.clientWidth - oDiv.offsetWidth + 'px';
+               }
+
+               if(iTop <=20){
+                   oDiv.style.top = 0;
+               }
+
+            if(iTop >= document.documentElement.clientHeight - oDiv.offsetHeight){
+                oDiv.style.top = document.documentElement.clientHeight - oDiv.offsetHeight + 'px';
+            }
+
+              /*e.returnValue = false;*/  //存在兼容性问题
+              /*e.preventDefault();*/
+               return false;  //阻止默认行为
+           };
+
+           document.onmouseup = function () {
+               document.onmousemove = null;
+               document.onmouseup = null;
+           };
+       };
+   </script>
+
+</body>
+</html>
