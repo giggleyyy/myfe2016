@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        h1{
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+        <button id = "btn"></button>
+        <div id = "div1">
+            hehe
+            <h1 id = 'h1'>haha</h1>
+        </div>
+        <script>
+            var oBtn = document.getElementById('btn');
+            oBtn.onclick = function (e) {
+                e = e || window.event;
+               alert(111);
+            };
+            var oDiv1 = document.getElementById('div1');
+            oDiv1.onclick = function(e){
+                console.log(e.target);
+                /*alert('div1');*/
+            };
+            var oH1 = document.getElementById('h1');
+            oH1.onclick = function(){
+                /*alert('h1');*/
+            };
+        </script>
+</body>
+</html>
