@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多元素拖拽</title>
+    <style>
+        #div, #h1, #p1{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position:absolute;
+            left:0;
+        }
+        #div{
+            top:0;
+        }
+        #h1{
+            top:120px;
+        }
+        #p1{
+            top:240px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div">div1</div>
+     <h1 id="h1">h1</h1>
+     <p id="p1">p1</p>
+    <script>
+        var oDiv = document.getElementById('div');
+        var oH1 = document.getElementById('h1');
+        var oP1 = document.getElementById('p1');
+        function  drag(elem) {
+            elem.onmousedown = function (e) {
+                e = e || window.event; //能力检测
+                iDivX = e.clientX - elem.offsetLeft;
+                iDivY = e.clientY - elem.offsetTop;
+
+                document.onmousemove = function (e) {
+                    e = e || window.event;
+                    var iLeft = e.clientX - iDivX;
+                    var iTop = e.clientY - iDivY;
+                    elem.style.left = iLeft + 'px';
+                    elem.style.top = iTop + 'px';
+                    if(iLeft <=20){
+                        elem.style.left = 0;
+                    }
+
+                    if(iLeft > document.documentElement.clientWidth - oDiv.offsetWidth){
+                        elem.style.left = document.documentElement.clientWidth - elem.offsetWidth + 'px';
+                    }
+
+                    if(iTop <=20){
+                        elem.style.top = 0;
+                    }
+
+                    if(iTop >= document.documentElement.clientHeight - elem.offsetHeight){
+                        elem.style.top = document.documentElement.clientHeight - elem.offsetHeight + 'px';
+                    }
+
+                    /*e.returnValue = false;*/  //存在兼容性问题
+                    /*e.preventDefault();*/
+                    return false;  //阻止默认行为
+                };
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+            };
+        }
+        drag(oDiv);
+        drag(oH1);
+        drag(oP1);
+    </script>
+</body>
+</html>
+
