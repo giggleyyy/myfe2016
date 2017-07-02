@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cloneNode</title>
+</head>
+<body>
+  <buttom id = "btn">clone</buttom>
+    <ul id="ul1">
+        <li>item 1</li>
+        <li>item 2</li>
+    </ul>
+  <script>
+      var oBtn = document.getElementById("btn");
+      var oUl = document.getElementById("ul1");
+      oBtn.onclick = function(){
+       var oFirst = oUl.children[0];
+       /*var oLi = document.createElement("li");
+       oUl.appendChild(oLi);
+       oLi.innerHTML = "smile";*/
+       var oLi = oFirst.cloneNode(true);//必须写true,因为连同文本节点一起复制
+       oUl.appendChild(oLi);
+
+      }
+  </script>
+</body>
+</html>

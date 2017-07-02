@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+<button id = "btn1">开始</button>
+<button id = "btn2">结束</button>
+<script>
+    var oBtn1 = document.getElementById('btn1');
+    var oBtn2 = document.getElementById('btn2');
+    oBtn1.onclick = function(){
+      timer = setInterval(function(){
+           console.log(Math.random());
+       },2000);    //每两秒执行一次
+    };
+
+    oBtn2.onclick = function(){
+            clearInterval(timer);
+    };
+
+    setTimeout(function() {
+        console.log(12345);
+    },0);  //js是单线程的，零是特殊的
+    console.log(2);
+    console.log(3);
+</script>
+</body>
+</html>

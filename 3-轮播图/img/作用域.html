@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+   /* for(var i = 0;i<3;i++){
+        console.log(i);
+    }
+    console.log(i);//js中没有块级作用域*/
+   /*var a = 4;*/
+   function aa(){
+       console.log(a); // 输出undefined，js中局部变量到处定义
+       var a = 5;//函数的局部作用域，加不加var的作用域不同
+      /*  a = 5;*/  //不加 var 为全局变量
+       var a = b =5;
+   }
+   aa();
+  console.log(a);  //a为局部变量，not defined
+  console.log(b);  //b为全局变量，输出5
+</script>
+</body>
+</html>

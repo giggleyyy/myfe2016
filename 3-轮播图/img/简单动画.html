@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单动画</title>
+    <style>
+        #div1{
+            width:200px;
+            height:100px;
+            background: #ff0000;
+            position:absolute;; /*不进行定位设置left,top没意义*/
+         /*   left:0;*/
+        }
+    </style>
+</head>
+<body>
+        <button id="btn">移动</button>
+        <div id = "div1" style="left:0;">div</div>
+        <script src="jslib.js"></script>
+        <script>
+            var oBtn = document.getElementById('btn');
+            var oDiv1 = document.getElementById('div1');
+            oBtn.onclick = function() {
+                /*alert(oDiv.offsetLeft);
+               /!* oDiv.style.left = parseInt(oDiv.style.left) + 10 + 'px';*!/
+               /!*oDiv.style.left = oDiv.offsetLeft + 10 + 'px'; //offset只读，不带单位*!/
+               setInterval(function(){
+             oDiv.style.left = oDiv.offsetLeft + 10 +'px';
+             },500);
+             };*/
+                animate(oDiv1,{
+                    left:300,
+                    top:200
+
+                },function(){
+                    animate(oDiv1,{
+                        width:400,
+                            height:200
+                    });
+                });//{}此花括号为js中的对象
+                };
+
+        </script>
+</body>
+</html>

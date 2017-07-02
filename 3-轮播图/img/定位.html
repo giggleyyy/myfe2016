@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+
+       #main{
+           margin-left:200px;
+           margin-top:200px;
+           width:800px;
+           height:400px;
+           background: #ccc;
+           position:relative;
+       }
+      #main div{
+          width:200px;
+          height:200px;
+         /*  float:left;*/
+          display:inline-block;
+          position:absolute;;
+       }
+        #div1{
+            background: red;
+            z-index:1;
+          /*  position:absolute;;  //z-index改变层级关系（对定位元素进行）
+            z-index:1;*/
+        }
+        #div2{
+            background: blue;
+            /*position:relative;
+            left:300px;
+            top:300px;
+           !* 定位对应四个和它一起用的值：left top right bottom*!
+            position:relative相对于初始位置挪动，位置不释放*/
+           /* position:absolute;!*绝对定位：1.空间释放   2.如果祖先元素没有定位，则它会相对于body定位，如果有祖先元素则会相对于最近的祖先元素定位 *!
+            top:50px;
+            left:50px;*/
+        }
+        #div3{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id = "main">
+        <div id="div1">a</div>
+        <div id="div2">b</div>
+        <div id="div3">c</div>
+</div>
+</body>
+</html>
