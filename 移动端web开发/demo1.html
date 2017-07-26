@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        h3{
+            width: 960px;
+            height: 100px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 100px;
+            margin: 30px auto;
+        }
+        figure{
+            width:960px ;
+            margin:0 auto;
+        }
+        figure img{
+            width: 960px;
+        }
+         section{
+             width: 960px;
+             margin:0 auto;
+
+         }
+        #left{
+            width: 630px;
+            height: 300px;
+            background: #00ff00;
+            float:left;
+
+        }
+        #right{
+            width: 300px;
+            height: 300px;
+            background: #ffff00;
+            float:right;
+
+        }
+        #left,#right{
+            display:table;
+        }
+        #left p,#right p{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        section p{
+            text-align: center;
+        }
+       footer{
+           clear:both; /*解决前一个元素浮动引起的空间释放，元素上移*/
+       }
+        @media(max-width:959px){
+            h3{
+                width:100%;
+            }
+            section{
+                width:100%;
+            }
+            #left{
+                width:67%;
+            }
+            #right{
+                width:30%;
+            }
+            figure{
+                width:100%;
+            }
+            figure img{
+                width:100%;
+                max-width: 100%;
+                min-width: 30%;
+            }
+        }
+        @media(max-width:480px){
+            #left,#right{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <h3>页头</h3>
+     </header>
+      <nav>
+          <h3>导航</h3>
+      </nav>
+     <figure>
+         <img src="01.jpg" alt="">
+     </figure>
+      <section>
+          <aside id="left">
+              <p>
+                  I love you,girl.smile please.Everything every be okay.tomorrow is another day..It is hot,ACs bloasting,which means electric bills go throught the roof,I can not help but think there's got to be a better way to beat the heat.
+              </p>
+          </aside>
+          <aside id="right">
+              <p>
+                  I love you,girl.smile please.Everything every be okay.tomorrow is another day..It is hot,ACs bloasting,which means electric bills go throught the roof,I can not help but think there's got to be a better way to beat the heat.
+              </p>
+          </aside>
+      </section>
+      <footer>
+          <h3>页脚</h3>
+      </footer>
+</body>
+</html>
